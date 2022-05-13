@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/style.css">
+  <title>Online Taxi Price Prediction</title>
+</head>
+
+<body>
+  <div class="form">
+      <p class="message">{{ prediction_text }}</p>
+      <form action="{{ url_for('predict') }}" method="post">
+      <h1>Uber and Lyft Cab Price Prediction</h1>
+      <br>
+      <img src="static/Keterangan.png" width ="300px" height="500px" alt="">
+      <br>
+      <h3>Cab Type</h3>
+      <input type="text" name="cab_type" placeholder="cab_type" required="required" />
+      <br>
+      <h3>Distance</h3>
+      <h5>- Fill in the distance value (ex : 2)</h5>
+      <input type="text" name="distance" placeholder="distance" required="required" />
+      <br>
+      <h3>Surge Multiplier</h3>
+      <h5>- Fill in the surge multiplier value between 1; 1,25; 1,5; 1,75; 2; 2,5; 3</h5>
+      <input type="text" name="surge_multiplier" placeholder="surge_multiplier" required="required" />
+      <br>
+      <h3>Cab Name</h3>
+      <input type="text" name="name" placeholder="name" required="required" />
+      <br>
+      <h3>Destination</h3>
+      <input type="text" name="destination" placeholder="destination" required="required" />
+      <br>
+      <h3>Source</h3>
+      <input type="text" name="source" placeholder="source" required="required" />
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predicted</button>
+    </form>
+
+  </div>
+
+</body>
+</html>
