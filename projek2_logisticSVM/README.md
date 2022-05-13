@@ -14,7 +14,7 @@ Final Project 2: Logistic Regression & SVM
 ![Screenshot 2022-05-13 152255](https://user-images.githubusercontent.com/73339446/168242418-269e920f-1a33-400a-aef0-05a8ebb0fd7c.png)
 
 # Prediction: Apakah besok hujan?
-Terdapat error pada menu Predict di heroku, tetapi error ini tidak ditemukan pada local. Berikut tampilan yang seharusnya didapatkan di heroku khusus menu Predict:
+Terdapat error pada menu Predict di heroku, tetapi error ini tidak ditemukan pada local. Berikut ini tampilan yang seharusnya didapatkan:
 ### Besok akan hujan!
 ![Screenshot 2022-05-13 152342](https://user-images.githubusercontent.com/73339446/168242549-7aeab30f-f6c2-4b2e-976d-255da3a35a03.png)
 
