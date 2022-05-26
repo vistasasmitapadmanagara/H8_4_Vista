@@ -15,7 +15,7 @@ Final Project 3: Ensemble
 ![Screenshot 2022-05-26 163833](https://user-images.githubusercontent.com/73339446/170462433-e3e91a7b-93b2-4125-a401-35aeef3939ca.png)
 
 ### Informasi terkait fitur penting
-![Screenshot 2022-05-26 163856](https://user-images.githubusercontent.com/73339446/170462545-be81eb08-451f-4330-84e0-7b56a9baf194.png)
+![data-3](https://user-images.githubusercontent.com/73339446/170483774-86da5bd5-4705-4ec7-a7da-f3fd6ed29df1.png)
 
 # Model
 ![Screenshot 2022-05-26 163914](https://user-images.githubusercontent.com/73339446/170462679-8dad9d84-bd05-49b3-95f9-770b13d678d4.png)
