@@ -350,11 +350,12 @@ def pred():
         pl = request.form["pl"]
 
         pred_list = pd.DataFrame([[ef, sc, umur, ss, cp, pl]])
-        prediction = rf.predict(pred_list)
+        sample = scaler.fit_transform(pred_list)
+        prediction = rf.predict(sample)
 
         output = {
             1 : "Ya, pasien ini meninggal akibat gagal jantung.",
-            0 : "Tidak diketahui, hasil disensor karena ilmuwan kehilangan kontak dengan pasien."
+            0 : "Tidak diketahui, hasil disensor."
         }
 
         return render_template('predict.html',prediction=output[prediction[0]])
