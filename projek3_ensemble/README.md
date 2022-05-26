@@ -23,5 +23,5 @@ Final Project 3: Ensemble
 # Prediction
 ![Screenshot 2022-05-26 163959](https://user-images.githubusercontent.com/73339446/170462739-4211ac13-cfd2-4c6c-95a0-53b4ea570220.png)
 
-Hasil prediksi
+### Hasil prediksi
 ![Screenshot 2022-05-26 164026](https://user-images.githubusercontent.com/73339446/170462786-b74017a9-3ebf-4e37-b101-94c2ed7c444b.png)
