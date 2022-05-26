@@ -25,7 +25,7 @@ Final Project 3: Ensemble
 ![Screenshot 2022-05-26 163959](https://user-images.githubusercontent.com/73339446/170462739-4211ac13-cfd2-4c6c-95a0-53b4ea570220.png)
 
 ### Hasil prediksi
-![Screenshot 2022-05-26 164026](https://user-images.githubusercontent.com/73339446/170462786-b74017a9-3ebf-4e37-b101-94c2ed7c444b.png)
+![Screenshot 2022-05-26 183553](https://user-images.githubusercontent.com/73339446/170480427-41a43084-4ae6-4e6e-8f79-3b94b0745e20.png)
 
 ### Ayo lakukan prediksi terhadap data pasien ini! (Pasien 2)
 ![Screenshot 2022-05-26 173038-NO](https://user-images.githubusercontent.com/73339446/170471053-d7f3b8f9-aaa8-4971-a6b9-0ce010494c3d.png)
