@@ -22,7 +22,7 @@ Final Project 3: Ensemble
 
 # Prediction
 ### Ayo lakukan prediksi terhadap data pasien ini! (Pasien 1)
-![predict-YES](https://user-images.githubusercontent.com/73339446/170484118-acf09c4c-f8ea-4979-aa90-1e2dabcebea4.png)
+[pred-YES](https://user-images.githubusercontent.com/73339446/170484218-5014c7e6-a8dd-40ca-9895-0a1697fa3720.png)
 
 ### Hasil prediksi
 ![Screenshot 2022-05-26 183553](https://user-images.githubusercontent.com/73339446/170480427-41a43084-4ae6-4e6e-8f79-3b94b0745e20.png)
@@ -30,6 +30,6 @@ Final Project 3: Ensemble
 ### Ayo lakukan prediksi terhadap data pasien ini! (Pasien 2)
 ![Screenshot 2022-05-26 173038-NO](https://user-images.githubusercontent.com/73339446/170471053-d7f3b8f9-aaa8-4971-a6b9-0ce010494c3d.png)
 
-### Hasil prediksi
+### Hasil prediksi!
 ![Screenshot 2022-05-26 181953-NO](https://user-images.githubusercontent.com/73339446/170478226-dbfc584d-516b-4449-9367-8df26c741b7e.png)
 
