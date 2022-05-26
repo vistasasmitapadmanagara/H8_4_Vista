@@ -281,83 +281,83 @@ def fitur_im_2():
 
     return render_template('fitur_im_2.html')
 
-# # Modelling
-# @app.route("/model")
-# def model():
-#     fitur = 'rf'
-#     rf = buat_plot(fitur)
+# Modelling
+@app.route("/model")
+def model():
+    fitur = 'rf'
+    rf = buat_plot(fitur)
 
-#     return render_template('model.html', score_lr=score_lr, score_svm=score_svm, score_tree=score_tree, 
-#                             score_nb=score_nb, score_rf=score_rf, score_knn=score_knn,
-#                              MAPE=MAPE, MAE=MAE, RMSE=RMSE, plot=rf)
+    return render_template('model.html', score_lr=score_lr, score_svm=score_svm, score_tree=score_tree, 
+                            score_nb=score_nb, score_rf=score_rf, score_knn=score_knn,
+                             MAPE=MAPE, MAE=MAE, RMSE=RMSE, plot=rf)
 
-# def buat_plot(fitur):
-#     if fitur == 'logistic':
-#         colors = ['tomato']
-#         roc = px.area(x=logistic_fpr, y=logistic_tpr, color_discrete_sequence=colors, template="plotly_white")
-#         roc.update_layout(title_text='Kurva ROC Logistic Regression')
-#         roc.add_annotation(x=0.5, y=0.5,
-#                             text=f"Logistic Regression AUC={logistic_auc:.2f}", showarrow=False)
-#     elif fitur == 'svm':
-#         colors = ['tomato']
-#         roc = px.area(x=svm_fpr, y=svm_tpr, color_discrete_sequence=colors, template="plotly_white")
-#         roc.update_layout(title_text='Kurva ROC SVM')
-#         roc.add_annotation(x=0.5, y=0.5,
-#                             text=f"SVM AUC={svm_auc:.2f}", showarrow=False)
-#     elif fitur == 'tree':
-#         colors = ['tomato']
-#         roc = px.area(x=tree_fpr, y=tree_tpr, color_discrete_sequence=colors, template="plotly_white")
-#         roc.update_layout(title_text='Kurva ROC Decision Tree')
-#         roc.add_annotation(x=0.5, y=0.5,
-#                             text=f"Decisition Tree AUC={tree_auc:.2f}", showarrow=False)
-#     elif fitur == 'nb':
-#         colors = ['tomato']
-#         roc = px.area(x=nb_fpr, y=nb_tpr, color_discrete_sequence=colors, template="plotly_white")
-#         roc.update_layout(title_text='Kurva ROC Naive Bayes')
-#         roc.add_annotation(x=0.5, y=0.5,
-#                             text=f"Naive Bayes AUC={nb_auc:.2f}", showarrow=False)
-#     elif fitur == 'rf':
-#         colors = ['tomato']
-#         roc = px.area(x=rf_fpr, y=rf_tpr, color_discrete_sequence=colors, template="plotly_white")
-#         roc.update_layout(title_text='Kurva ROC Random Forest')
-#         roc.add_annotation(x=0.5, y=0.5,
-#                             text=f"Random Forest AUC={rf_auc:.2f}", showarrow=False)
-#     elif fitur == 'knn':
-#         colors = ['tomato']
-#         roc = px.area(x=knn_fpr, y=knn_tpr, color_discrete_sequence=colors, template="plotly_white")
-#         roc.update_layout(title_text='Kurva ROC KNN')
-#         roc.add_annotation(x=0.5, y=0.5,
-#                             text=f"KNN AUC={knn_auc:.2f}", showarrow=False)
+def buat_plot(fitur):
+    if fitur == 'logistic':
+        colors = ['tomato']
+        roc = px.area(x=logistic_fpr, y=logistic_tpr, color_discrete_sequence=colors, template="plotly_white")
+        roc.update_layout(title_text='Kurva ROC Logistic Regression')
+        roc.add_annotation(x=0.5, y=0.5,
+                            text=f"Logistic Regression AUC={logistic_auc:.2f}", showarrow=False)
+    elif fitur == 'svm':
+        colors = ['tomato']
+        roc = px.area(x=svm_fpr, y=svm_tpr, color_discrete_sequence=colors, template="plotly_white")
+        roc.update_layout(title_text='Kurva ROC SVM')
+        roc.add_annotation(x=0.5, y=0.5,
+                            text=f"SVM AUC={svm_auc:.2f}", showarrow=False)
+    elif fitur == 'tree':
+        colors = ['tomato']
+        roc = px.area(x=tree_fpr, y=tree_tpr, color_discrete_sequence=colors, template="plotly_white")
+        roc.update_layout(title_text='Kurva ROC Decision Tree')
+        roc.add_annotation(x=0.5, y=0.5,
+                            text=f"Decisition Tree AUC={tree_auc:.2f}", showarrow=False)
+    elif fitur == 'nb':
+        colors = ['tomato']
+        roc = px.area(x=nb_fpr, y=nb_tpr, color_discrete_sequence=colors, template="plotly_white")
+        roc.update_layout(title_text='Kurva ROC Naive Bayes')
+        roc.add_annotation(x=0.5, y=0.5,
+                            text=f"Naive Bayes AUC={nb_auc:.2f}", showarrow=False)
+    elif fitur == 'rf':
+        colors = ['tomato']
+        roc = px.area(x=rf_fpr, y=rf_tpr, color_discrete_sequence=colors, template="plotly_white")
+        roc.update_layout(title_text='Kurva ROC Random Forest')
+        roc.add_annotation(x=0.5, y=0.5,
+                            text=f"Random Forest AUC={rf_auc:.2f}", showarrow=False)
+    elif fitur == 'knn':
+        colors = ['tomato']
+        roc = px.area(x=knn_fpr, y=knn_tpr, color_discrete_sequence=colors, template="plotly_white")
+        roc.update_layout(title_text='Kurva ROC KNN')
+        roc.add_annotation(x=0.5, y=0.5,
+                            text=f"KNN AUC={knn_auc:.2f}", showarrow=False)
     
-#     rocJSON = json.dumps(roc, cls=plotly.utils.PlotlyJSONEncoder)
-#     return rocJSON
+    rocJSON = json.dumps(roc, cls=plotly.utils.PlotlyJSONEncoder)
+    return rocJSON
 
-# @app.route('/chart', methods=['GET', 'POST'])
-# def ubah_fitur():
-#     fitur = request.args['terpilih']
-#     rocJSON= buat_plot(fitur)
+@app.route('/chart', methods=['GET', 'POST'])
+def ubah_fitur():
+    fitur = request.args['terpilih']
+    rocJSON= buat_plot(fitur)
 
-#     return rocJSON
+    return rocJSON
     
-# @app.route("/pred", methods=['GET','POST'])
-# def pred():
-#     if request.method == "POST":
-#         ef = request.form["ef"]
-#         sc = request.form["sc"]
-#         umur = request.form["umur"]
-#         ss = request.form["ss"]
-#         cp = request.form["cp"]
-#         pl = request.form["pl"]
+@app.route("/pred", methods=['GET','POST'])
+def pred():
+    if request.method == "POST":
+        ef = request.form["ef"]
+        sc = request.form["sc"]
+        umur = request.form["umur"]
+        ss = request.form["ss"]
+        cp = request.form["cp"]
+        pl = request.form["pl"]
 
-#         pred_list = pd.DataFrame([[ef, sc, umur, ss, cp, pl]])
-#         prediction = rf.predict(pred_list)
+        pred_list = pd.DataFrame([[ef, sc, umur, ss, cp, pl]])
+        prediction = rf.predict(pred_list)
 
-#         output = {
-#             1 : "Ya, pasien ini meninggal akibat gagal jantung.",
-#             0 : "Tidak diketahui, hasil disensor karena ilmuwan kehilangan kontak dengan pasien."
-#         }
+        output = {
+            1 : "Ya, pasien ini meninggal akibat gagal jantung.",
+            0 : "Tidak diketahui, hasil disensor karena ilmuwan kehilangan kontak dengan pasien."
+        }
 
-#         return render_template('predict.html',prediction=output[prediction[0]])
+        return render_template('predict.html',prediction=output[prediction[0]])
 
-#     return render_template('predict.html')
+    return render_template('predict.html')
 
