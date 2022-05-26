@@ -3,7 +3,9 @@ matplotlib
 seaborn
 numpy
 pandas
+json
 plotly
 plotly-express
 scikit-learn
+math
 gunicorn
