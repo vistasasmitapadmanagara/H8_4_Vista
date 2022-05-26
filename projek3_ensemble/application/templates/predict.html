@@ -54,6 +54,7 @@
                     {{prediction}}
                   </h6>
                   <hr>
+                  <a href="/pred"><button type="reset" class="btn btn-primary">Reset</button></a>
                 </div>
                 <form action="{{ url_for('pred') }}" method="POST">
                   <div class="mb-3">
@@ -80,7 +81,7 @@
                     <label for="pl" class="form-label">Platelets</label>
                     <input type="number" class="form-control" id="pl" name="pl" placeholder="hasil test platelets pasien" required>
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Predict</button>
                 </form>
             </div>
               {% endblock %}
