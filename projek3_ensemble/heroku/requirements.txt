@@ -7,5 +7,6 @@ json
 plotly
 plotly-express
 scikit-learn
+imblearn
 math
 gunicorn
