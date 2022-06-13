@@ -23,15 +23,15 @@
 ![conclu7](https://user-images.githubusercontent.com/73339446/173399718-cadc1a64-c673-4d34-bad4-dbbcf8cce3d5.png)
 
 # Prediction
-- Segmentasi Pasar: Kecil
+### Segmentasi Pasar: Kecil
 ![predic1](https://user-images.githubusercontent.com/73339446/173399815-87a75dba-1616-4c40-9005-3e9443355181.png)
 ![predic2](https://user-images.githubusercontent.com/73339446/173399834-d92319d6-474c-499a-af68-0eed2800e859.png)
 
-- Segmentasi Pasar: Besar
+### Segmentasi Pasar: Besar
 ![predic3](https://user-images.githubusercontent.com/73339446/173399887-59a0a4f3-8af1-47be-8d04-86fce8c5819d.png)
 ![predic4](https://user-images.githubusercontent.com/73339446/173399896-773b2843-7684-4872-8fbc-1f5962a88282.png)
 
-- Segmentasi Pasar: Cukup Besar
+### Segmentasi Pasar: Cukup Besar
 ![predic5](https://user-images.githubusercontent.com/73339446/173399931-43e74310-7d24-4039-9b1d-25689b5abd5b.png)
 ![predic6](https://user-images.githubusercontent.com/73339446/173399949-e8d3e275-b91c-44a2-b2a5-54124bf5b8cb.png)
 
