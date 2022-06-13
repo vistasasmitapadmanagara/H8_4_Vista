@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous">
+
+    <!-- css -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}"
+    type="text/css">
+
+    <!-- plot chart -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      function cb(selection){
+        $.getJSON({
+          url: "/callback", data: { 'data':selection}, success: function (result){
+            Plotly.newPlot('chart1', result, {});;
+          }
+        })
+      }
+    </script>
+    
+    <title>Credit Card</title>
+    
+</head>
+<body>
+  
+  <nav class="navbar navbar-light" style="background-color: white;">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1" style="color: black; font-family: Segoe UI; margin: 0 0 0 8px; letter-spacing: 0.1em;">OUR Data Studio</span>
+      <p style="margin: 8px 16px 8px 0; font-size: 14px; color: black;">OUR Projects / Credit Card - Clustering</p>
+    </div>
+  </nav>
+
+  <nav>
+    <ul class="nav nav-tabs" style="margin: 8px 0 0 0">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/data" style="color: black;">Data</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/modelling" style="color: black;">Modelling</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/conclu" style="color: black;   border-top: 4px #46039f solid;">Conclusion</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/prediction" style="color: black;">Prediction</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    {% block content %}
+    <div style="margin: 8px 48px 8px 48px;">
+      <div class="tengahmodel">
+        <nav class="nav flex-column" style="padding: 8px 0 8px 0;width: 100%;">
+          <a class="nav-link disabled">Model Viewer</a>
+          <a class="nav-link" href="/conclu">Segmentasi Pasar</a>
+          <a class="nav-link" href="/con_fitur">Fitur Paling Berpengaruh</a>
+          <a class="nav-link disabled"></a>
+          <a class="nav-link disabled">Distribusi</a>
+          <a class="nav-link" href="/purc_freq">Frekuensi Pembelian</a>
+          <a class="nav-link active" aria-current="page" href="/inst_purc_freq" style="color: black;"><b>Frekuensi Cicilan Pembelian</b></a>
+          <a class="nav-link" href="/cash_ad_freq">Frekuensi Penarikan Tunai</a>
+          <a class="nav-link" href="/balance">Sisa Saldo</a>
+          <a class="nav-link" href="/cash_ad">Penarikan Tunai</a>
+        </nav>
+        <div>
+          <div class="chart1" id="chart1" style="width: 100%;"></div>
+        </div>
+        <div style="padding: 24px 0 0 0;">
+          <h4 style="margin-bottom: 16px;">Tabel Frekuensi Cicilan Pembelian</h4>
+          <table class="table">
+            <tr>
+              <th></th>
+              <th>Pasar Besar</th>
+              <th>Pasar Cukup Besar</th>
+              <th>Pasar Cukup Kecil</th>
+              <th>Pasar Kecil</th>
+            </tr>
+            <tr>
+              <td>mean</td>
+              <td>0.1</td>
+              <td>0.7</td>
+              <td>0.2</td>
+              <td>0.8</td>
+            </tr>
+            <tr>
+              <td>min</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+            </tr>
+            <tr>
+              <td>max</td>
+              <td>0.8</td>
+              <td>1.0</td>
+              <td>1.0</td>
+              <td>1.0</td>
+            </tr>
+          </table>
+          <p>Keterangan:</p>
+          <table class="ket">
+            <tr>
+              <td>0.0</td>
+              <td>=</td>
+              <td>Tidak Pernah</td>
+            </tr>
+            <tr>
+              <td>0.1 - 0.3</td>
+              <td>=</td>
+              <td>Jarang</td>
+            </tr>
+            <tr>
+              <td>0.4 - 0.6</td>
+              <td>=</td>
+              <td>Kadang-Kadang</td>
+            </tr>
+            <tr>
+              <td>0.7 - 0.9</td>
+              <td>=</td>
+              <td>Sering</td>
+            </tr>
+            <tr>
+              <td>1.0</td>
+              <td>=</td>
+              <td>Sangat Sering</td>
+            </tr>
+            <tr>
+              <td>> 1.0</td>
+              <td>=</td>
+              <td>Terlalu Sering</td>
+            </tr>
+          </table>
+      </div>
+    </div>
+    {% endblock %}
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+</body>
+
+<script>
+  a = {{ graph_inst_purc | safe }};
+  Plotly.newPlot('chart1', a, {})
+</script>
+
+</html>
