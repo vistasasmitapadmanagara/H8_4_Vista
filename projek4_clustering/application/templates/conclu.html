@@ -42,13 +42,13 @@
   <nav>
     <ul class="nav nav-tabs" style="margin: 8px 0 0 0">
       <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="/data" style="color: black;">Data</a>
+        <a class="nav-link" href="/data" style="color: black;">Data</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/modelling" style="color: black;">Modelling</a>
+        <a class="nav-link" href="/eda" style="color: black;">EDA</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="/conclu" style="color: black;   border-top: 4px #46039f solid;">Conclusion</a>
+        <a class="nav-link active" aria-current="page" href="/conclu" style="color: black;" style="color: black;border-top: 4px #46039f solid;">Conclusion</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/prediction" style="color: black;">Prediction</a>
@@ -57,39 +57,109 @@
   </nav>
 
   <main>
-    {% block content %}
-    <div style="margin: 8px 48px 8px 48px;">
-      <div class="tengahmodel">
-        <nav class="nav flex-column" style="padding: 8px 0 8px 0;">
-          <a class="nav-link disabled">Model Viewer</a>
-          <a class="nav-link active" aria-current="page" href="/conclu" style="color: black;"><b>Segmentasi Pasar</b></a>
-          <a class="nav-link" href="/con_fitur">Fitur Paling Berpengaruh</a>
-          <a class="nav-link disabled"></a>
-          <a class="nav-link disabled">Distribusi</a>
-          <a class="nav-link" href="/purc_freq">Frekuensi Pembelian</a>
-          <a class="nav-link" href="/inst_purc_freq">Frekuensi Cicilan Pembelian</a>
-          <a class="nav-link" href="/cash_ad_freq">Frekuensi Penarikan Tunai</a>
-          <a class="nav-link" href="/balance">Sisa Saldo</a>
-          <a class="nav-link" href="/cash_ad">Penarikan Tunai</a>
-        </nav>
-        <div>
-          <div class="chart1" id="chart1" style="width: 100%;"></div>
-        </div>
-        <div>
-          <p></p>
+    <div class="wrapper">
+      <div class="wrapper-left">
+        <ul>
+          <li data-li="ringkasan" class="active">
+            <p>Ringkasan</p>
+          </li>
+          <li data-li="terbanyak">
+            <p>Pengguna Terbanyak</p>
+          </li>
+          <li data-li="lumayanbanyak">
+            <p>Pengguna Lumayan Banyak</p>
+          </li>
+          <li data-li="lumayansedikit">
+            <p>Pengguna Lumayan Sedikit</p>
+          </li>
+          <li data-li="palingsedikit">
+            <p>Pengguna Paling Sedikit</p>
+          </li>
+        </ul>
+      </div>
+      <div class="wrapper-right">
+        <div class="container" style="margin-top: 24px;">
+          <div class="item ringkasan">
+            <div class="item-info">
+                <p>Berdasarkan clustering yang telah kami lakukan terhadap dataset pengguna credit card, di dapatkan 4 kelompok pengguna berdasarkan perilaku penggunaannya yaitu: Pengguna Terbanyak, Pengguna Lumayan Banyak, Pengguna Lumayan Sedikit, dan Pengguna Paling Sedikit. Untuk memposisikan bisnis kami sebagai pilihan yang terjangkau bagi konsumen lokal, kami berencana untuk fokus pada konsumen kelas menengah yaitu Pengguna Terbanyak dan Pengguna Lumayan Banyak.
+                </p>
+                <p></p>
+                <p><b>Kriteria segmen pasar:</b></p>
+                <p>
+                    - Seberapa sering pengguna melakukan pembelian produk? <br>
+                    - Seberapa sering pengguna melakukan penarikan tunai?<br>
+                    - Berapa jumlah rata-rata sisa saldo pengguna?<br>
+                    - Berapa jumlah rata-rata penarikan tunai yang dilakukan pengguna?<br>
+                    - Berapa jumlah rata-rata minimum pembayaran yang dilakukan pengguna?
+                </p>
+            </div>
+          </div>
+          <div class="item terbanyak" style="display: none;">
+            <div class="item-info">
+                <p>Pangsa Pelanggan: 79%</p>
+                <p>Pengeluaran: $734 per bulan</p>
+                <p><b>Karakteristik utama:</b></p>
+                <p>
+                    - Kebiasaan berbelanja: Kadang-Kadang.<br>
+                    - Sangat jarang melakukan penarikan tunai.<br>
+                    - Rata-rata sisa saldo di rekeningnya sebesar $918 per bulan.<br>
+                    - Rata-rata penarikan tunai yang dilakukan sebesar $364 per bulan.<br>
+                    - Rata-rata jumlah transaksi dengan penarikan tunai adalah 1 transaksi perbulan.<br>
+                    - Rata-rata minimum pembayaran yang dilakukan sebesar $424 per bulan.
+                </p>
+            </div>
+          </div>
+          <div class="item lumayanbanyak" style="display: none;">
+            <div class="item-info">
+                <p>Pangsa Pelanggan: 16%</p>
+                <p>Pengeluaran: $579 per bulan</p>
+                <p><b>Karakteristik utama:</b></p>
+                <p>
+                    - Kebiasaan berbelanja: Jarang.<br>
+                    - Cukup sering melakukan penarikan tunai.<br>
+                    - Rata-rata sisa saldo di rekeningnya sebesar $4,269 per bulan.<br>
+                    - Rata-rata penarikan tunai yang dilakukan sebesar $4,080 per bulan.<br>
+                    - Rata-rata jumlah transaksi dengan penarikan tunai adalah 12 transaksi perbulan.<br>
+                    - Rata-rata minimum pembayaran yang dilakukan sebesar $2,055 per bulan.
+                </p>
+            </div>
+          </div>
+          <div class="item lumayansedikit" style="display: none;">
+            <div class="item-info">
+                <p>Pangsa Pelanggan: 3%</p>
+                <p>Pengeluaran: $8,669 per bulan</p>
+                <p><b>Karakteristik utama:</b></p>
+                <p>
+                    - Kebiasaan berbelanja: Sangat Sering.<br>
+                    - Sangat jarang melakukan penarikan tunai.<br>
+                    - Rata-rata sisa saldo di rekeningnya sebesar $3,372 per bulan.<br>
+                    - Rata-rata penarikan tunai yang dilakukan sebesar $669 per bulan.<br>
+                    - Rata-rata jumlah transaksi dengan penarikan tunai adalah 2 transaksi perbulan.<br>
+                    - Rata-rata minimum pembayaran yang dilakukan sebesar $1,579 per bulan.
+                </p>
+            </div>
+          </div>
+          <div class="item palingsedikit" style="display: none;">
+            <div class="item-info">
+                <p>Pangsa Pelanggan: 2%</p>
+                <p>Pengeluaran: $1,295 per bulan</p>
+                <p><b>Karakteristik utama:</b></p>
+                <p>
+                    - Kebiasaan berbelanja: Kadang-Kadang.<br>
+                    - Jarang melakukan penarikan tunai.<br>
+                    - Rata-rata sisa saldo di rekeningnya sebesar $4,692 per bulan.<br>
+                    - Rata-rata penarikan tunai yang dilakukan sebesar $1,542 per bulan.<br>  
+                    - Rata-rata jumlah transaksi dengan penarikan tunai adalah 4 transaksi perbulan.<br>
+                    - Rata-rata minimum pembayaran yang dilakukan sebesar $27,540 per bulan.               
+                </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    {% endblock %}
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
+  <script src="static/script_conclu.js"></script>
 </body>
-
-<script>
-  a = {{ graph_cl1 | safe }};
-  Plotly.newPlot('chart1', a, {})
-</script>
-
 </html>

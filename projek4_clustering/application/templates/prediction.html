@@ -45,7 +45,7 @@
         <a class="nav-link" aria-current="page" href="/data" style="color: black;" >Data</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/modelling" style="color: black;">Modelling</a>
+        <a class="nav-link" href="/eda" style="color: black;">EDA</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/conclu" style="color: black;">Conclusion</a>
@@ -75,33 +75,37 @@
               {{prediction}}
             </h6>
             <hr style="width: 100%;">
-            <a href="/prediction"><button type="reset" class="btn btn-primary">Reset</button></a>
+            <a href="/prediction"><button type="reset" class="btn btn-primary" style="background-color: #46039f; border: #46039f 2px solid;">Reset</button></a>
           </div>
         </div>
         <div style="width: 100%; margin: 16px 10% 0 10%;">
           <form action="{{ url_for('prediction') }}" method="POST">
             <h5 style="margin: 0 0 24px 0;">Form Prediction</h5>
             <div class="mb-3">
-              <label for="freq_beli" class="form-label">Frekuensi Pembelian</label>
-              <input type="text" class="form-control" id="freq_beli" step="0.000001" name="freq_beli" placeholder="0.0" required>
+              <label for="saldo" class="form-label">Sisa Saldo</label>
+              <input type="text" class="form-control" id="saldo" name="saldo" placeholder="$0" required>
             </div>
             <div class="mb-3">
-              <label for="freq_beli_cicilan" class="form-label">Frekuensi Cicilan Pembelian</label>
-              <input type="text" class="form-control" id="freq_beli_cicilan" step="0.000001" name="freq_beli_cicilan"  placeholder="0.0" required>
+              <label for="tarik_tunai" class="form-label">Jumlah Penarikan Tunai</label>
+              <input type="text" class="form-control" id="tarik_tunai" name="tarik_tunai" placeholder="$0" required>
             </div>
             <div class="mb-3">
               <label for="freq_tunai" class="form-label">Frekuensi Penarikan Tunai</label>
               <input type="text" class="form-control" id="freq_tunai" step="0.000001" name="freq_tunai"  placeholder="0.0" required>
             </div>
             <div class="mb-3">
-              <label for="saldo" class="form-label">Sisa Saldo</label>
-              <input type="text" class="form-control" id="saldo" name="saldo" placeholder="0" required>
+              <label for="freq_tunai_trx" class="form-label">Jumlah Transaksi dengan "Cash Advance"</label>
+              <input type="text" class="form-control" id="freq_tunai_trx" name="freq_tunai_trx" placeholder="$0" required>
             </div>
             <div class="mb-3">
-              <label for="tarik_tunai" class="form-label">Jumlah Penarikan Tunai</label>
-              <input type="text" class="form-control" id="tarik_tunai" name="tarik_tunai" placeholder="0" required>
+              <label for="min_paym" class="form-label">Jumlah Minimum Pembayaran</label>
+              <input type="text" class="form-control" id="min_paym" name="min_paym"  placeholder="$0" required>
             </div>
-            <button type="submit" class="btn btn-primary">Predict</button>
+            <div class="mb-3">
+              <label for="purc" class="form-label">Jumlah Pengeluaran</label>
+              <input type="text" class="form-control" id="purc" name="purc"  placeholder="$0" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="background-color: #46039f;border: #46039f 2px solid;">Predict</button>
           </form>
         </div>
     </div>

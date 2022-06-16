@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}"
     type="text/css">
 
-    <!-- plot chart -->
+    <!-- plotting -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
@@ -32,7 +32,7 @@
 </head>
 <body>
   
-  <nav class="navbar navbar-light" style="background-color: white;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1" style="color: black; font-family: Segoe UI; margin: 0 0 0 8px; letter-spacing: 0.1em;">OUR Data Studio</span>
       <p style="margin: 8px 16px 8px 0; font-size: 14px; color: black;">OUR Projects / Credit Card - Clustering</p>
@@ -42,10 +42,10 @@
   <nav>
     <ul class="nav nav-tabs" style="margin: 8px 0 0 0">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/data" style="color: black;  border-top: 4px #46039f solid;">Data</a>
+        <a class="nav-link" href="/data" style="color: black;">Data</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/eda" style="color: black;">EDA</a>
+        <a class="nav-link active" aria-current="page" href="/eda" style="color: black; border-top: 4px #46039f solid;">EDA</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/conclu" style="color: black;">Conclusion</a>
@@ -57,30 +57,58 @@
   </nav>
 
   <main>
-    {% block content %}
-    <div class="dat-chart">
-      <div style="margin: 16px 16px 8px 16px; text-align: justify; width: 100%;">
-        <h2>
-          Credit Card
-        </h2>
-        <p>
-          &nbsp&nbsp&nbsp&nbspBank adalah lembaga keuangan yang menghimpun dana dari masyarakat dan menyalurkan kembali dana tersebut ke masyarakat serta memberikan jasanya dalam lalulintas pembayaran dan peredaran uang. Pada umumnya Bank dikenal sebagai lembaga keuangan yang kegiatan utamanya menerima simpanan, giro, tabungan dan deposito. Kemudian bank dikenal juga sebagai tempat untuk meminjam uang (kredit) bagi masyarakat yang membutuhkannya. 
-        </p>
-        <p>
-          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPersaingan antar-bank saat ini menjadi sangat tinggi membuat setiap perusahaan harus memiliki strategi pemasaran produk perbankannya. Segmentasi pasar adalah salah satu strategi dalam dunia bisnis dengan mengelompokkan produk yang dimiliki sesuai dengan kesamaan, kemiripan, minat serta kebutuhan pelanggan. Alternatif strategi terhadap kegiatan pemasaran yang dilakukan sangat diperlukan agar perusahaan semakin tumbuh dan berkembang. Strategi pemasaran yang tepat dengan menetapkan segementasi pasar yang sesuai sasaran akan mempengaruhi pertumbuhan kreditnya.
-        </p>
+    <div class="wrapper">
+      <div class="wrapper-left">
+        <ul>
+          <li data-li="fiturpenting" class="active">
+            <p>Fitur Paling Berpengaruh</p>
+          </li>
+          <li data-li="distribusi">
+            <p>Distribusi Plot</p>
+          </li>
+        </ul>
       </div>
-      <div id="chart1" class="chart1" style="margin: 16px 16px 8px 16px; width: 100%;"></div>
+      <div class="wrapper-right">
+        <div class="container">
+          <div class="item fiturpenting">
+            <div class="item-info">
+              <div class="chart2" id="chart2" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class="item distribusi" style="display: none;">
+            <div class="item-info">
+              <select class="form-select" id="variabel" class="variabel" aria-label="Default select example">
+                <option value="balance">Balance</option>
+                <option value="cash_advance">Cash Advance</option>
+                <option value="cash_advance_freq">Cash Advance Frequency</option>
+                <option value="cash_advance_trx">Cash Advance TRX</option>
+                <option value="min_pay">Minimum Payments</option>
+                <option value="purchases">Purchases</option>
+              </select>
+              <div id="chart1" class="chart1" style="margin-top: 16px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    {% endblock %}
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
+  <script src="static/script_eda.js"></script>
+  <script src="{{ url_for('static', filename='jquery-1.11.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='plots.js') }}"></script>
+
+
 </body>
+
 <script>
-  a = {{ graph1 | safe }};
-  Plotly.newPlot('chart1', a, {})
+  a = {{ graph_con_fit | safe}};
+  Plotly.newPlot('chart2', a, {});
+</script>
+
+<script>
+  b = {{ plot | safe}};
+  Plotly.newPlot('chart1', b, {});
 </script>
 
 </html>
