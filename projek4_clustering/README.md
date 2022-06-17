@@ -19,3 +19,5 @@
 ![conclu5](https://user-images.githubusercontent.com/73339446/174065760-8e254200-7562-4a7e-ac79-731a8f03eff2.png)
 
 # Prediction
+![pred1](https://user-images.githubusercontent.com/73339446/174228876-85c3339a-e801-4517-99ab-b76ed2e8ac0a.png)
+![pred2](https://user-images.githubusercontent.com/73339446/174228883-76e1df2c-7e06-4535-b98e-b3df5a433dfe.png)
